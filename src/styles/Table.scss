@@ -68,14 +68,12 @@
 
             #Edit {
                 @include buttonTable;
-                background-image: url(/dist/img/Edit.png);
-                background-color:red;
+                background-image: url('/dist/img/Edit.png');
             }
 
             #del {
                 @include buttonTable;
-                background-image: url(/dist/img/Delete.png);
-                 background-color:green;
+                background-image: url('/dist/img/Delete.png');
             }
         }
     }
