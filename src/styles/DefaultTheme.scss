@@ -1,0 +1,14 @@
+$gradientColorFirst: #c0392b;
+$gradientColorSecond: #8e44ad;
+:export {
+    primaryColor: $gradientColorFirst;
+    secondaryColor: $gradientColorSecond;
+  }
+$formColor:#ffffff;
+$fieldBorder:grey;
+$fieldBorderFocused:black;
+$ButtonFormTextColor:#ffffff;
+
+$TableHeadingColor:#36304a;
+$TabeBodyTextColor:white;
+$TableBodyColor:white;

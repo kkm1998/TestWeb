@@ -1,0 +1,99 @@
+@import 'DefaultTheme';
+// @import 'DarkTheme';
+@mixin buttonsForm {
+    outline: none;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    font-family: Trebuchet MS;
+    font-size: 28px;
+    text-decoration: none;
+    box-shadow: -2px 7px 21px -6px rgba(0, 0, 0, 0.75);
+
+    &:active {
+        position: relative;
+        top: 1px;
+    }
+}
+
+@mixin fields {
+    outline: none;
+    border-width: 0 0 1px;
+    font-size: larger;
+}
+
+@mixin form {
+    position: relative;
+    border-radius: 23px;
+    box-shadow: -2px 7px 21px -6px rgba(0, 0, 0, 0.75);
+    text-align: center;
+    #reset {
+        display: none;
+    }
+}
+
+@mixin formHeader {
+    position: absolute;
+    top: 0;
+    left: 40%;
+    font-size: xx-large;
+}
+
+@mixin TextareaPlaceholder {
+    &::placeholder {
+        font-size: xx-large;
+        text-align: center;
+    }
+}
+
+#Form {
+    @include form;
+    width: 25%;
+    margin-left: 30%;
+    padding: 5%;
+    background-color: $formColor;
+    #headerForm {
+        @include formHeader();
+    }
+
+    #Studia {
+        >* {
+            @include fields;
+            height: 30px;
+            margin: 5%;
+            width: 100%;
+            border-color: $fieldBorder;
+            background-color: $formColor;
+            
+
+            &:focus {
+                border-color: $fieldBorderFocused;
+            }
+        }
+
+        textarea {
+            @include TextareaPlaceholder;
+            min-height: 100px;
+            max-height: 300px;
+            max-width: 100%;
+            min-width: 100%;
+        }
+    }
+
+    #Send,
+    #Save {
+        @include buttonsForm;
+        background: linear-gradient(to right, $gradientColorFirst, $gradientColorSecond);
+        color: $ButtonFormTextColor;
+        border-radius: 23px;
+        padding: 5% 20%;
+
+        &:hover {
+            background: linear-gradient(to left, $gradientColorFirst, $gradientColorSecond);
+        }
+    }
+
+    #Save {
+        display: none;
+    }
+}

@@ -1,0 +1,82 @@
+@import 'DefaultTheme';
+// @import 'DarkTheme';
+@mixin buttonTable {
+    width: 32px;
+    height: 32px;
+    margin: 0 10px 0 10px;
+    transition: transform 0.5s;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0);
+
+    &:hover {
+        transform: rotate(30deg);
+    }
+
+    &:active {
+        position: relative;
+        top: 6px;
+    }
+}
+
+@mixin roundHeadingOutput {
+    th:first-of-type {
+        border-top-left-radius: 23px;
+    }
+
+    th:last-of-type {
+        border-top-right-radius: 23px;
+    }
+}
+
+@mixin Output {
+    border-radius: 23px;
+    box-shadow: -2px 7px 21px -6px rgba(0, 0, 0, 0.75);
+    overflow-y: auto;
+    transition: opacity 1s ease-out;
+    opacity: 0;
+
+    tr {
+        transition: 3s;
+    }
+}
+
+#Output {
+    @include Output;
+    margin-top: 5%;
+    background-color: $TableBodyColor;
+    width: 100%;
+    max-height: 600px;
+
+    #Output_Table {
+        width: 100%;
+        border-collapse: collapse;
+        display: none;
+
+        #heading {
+            @include roundHeadingOutput;
+            color: $TabeBodyTextColor;
+
+            th {
+                background-color: $TableHeadingColor;
+            }
+        }
+
+        th {
+            padding: 3% 0 3%;
+
+            #Edit {
+                @include buttonTable;
+                background-image: url(/dist/img/Edit.png);
+                background-color:red;
+            }
+
+            #del {
+                @include buttonTable;
+                background-image: url(/dist/img/Delete.png);
+                 background-color:green;
+            }
+        }
+    }
+}
